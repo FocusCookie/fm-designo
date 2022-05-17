@@ -1,0 +1,58 @@
+import { Meta, ColorPalette, ColorItem, Typeset } from "@storybook/addon-docs";
+import colors from "./colors.tsx";
+
+<Meta title="Design System/Colors" />
+
+# Colors
+
+This project uses Tailwindcss so a lot of colors props are passed in as CSS classes that
+Tailwind applies styling to i.e. `text-blue-500` to use the primary blue. You can find the
+full colour palette [here](https://tailwindcss.com/docs/customizing-colors/#default-color-palette). The custom colors below can be applied in the same way as the standard tailwind colors i.e. `bg-primary-500`.
+
+Designo uses the following custom colors in the tailwind config.
+
+# Primary Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Peach"
+    colors={{
+      500: "hsla(11, 72%, 66%, 1)",
+    }}
+  />
+  <ColorItem
+    title="Black"
+    colors={{
+      500: "hsla(270, 3%, 11%, 1)",
+    }}
+  />
+  <ColorItem
+    title="White"
+    colors={{
+      500: "hsla(0, 100%, 100%, 1)",
+    }}
+  />
+</ColorPalette>
+
+# Secondary Colors
+
+<ColorPalette>
+  <ColorItem
+    title="Light Peach"
+    colors={{
+      500: "hsla(11, 100%, 80%, 1)",
+    }}
+  />
+  <ColorItem
+    title="Dark Grey"
+    colors={{
+      500: "hsla(264, 5%, 20%, 1)",
+    }}
+  />
+  <ColorItem
+    title="Light Grey"
+    colors={{
+      500: "hsla(210, 17%, 95%, 1)",
+    }}
+  />
+</ColorPalette>
