@@ -2,6 +2,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      borderRadius: {
+        designo: "0.9375rem",
+      },
       colors: {
         d_peach: {
           500: "hsla(11, 72%, 66%, 1)",
@@ -13,6 +16,7 @@ module.exports = {
           500: "hsla(0, 100%, 100%, 1)",
         },
         d_light_peach: {
+          100: "hsla(14, 76%, 97%, 1)",
           500: "hsla(11, 100%, 80%, 1)",
         },
         d_dark_grey: {
@@ -20,6 +24,9 @@ module.exports = {
         },
         d_light_grey: {
           500: "hsla(210, 17%, 95%, 1)",
+        },
+        d_grey: {
+          500: "hsla(0, 0%, 96%, 1)",
         },
       },
       fontSize: {

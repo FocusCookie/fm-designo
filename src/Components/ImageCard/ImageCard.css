@@ -1,0 +1,13 @@
+.image-card {
+  @apply rounded-designo;
+}
+
+.image-card--primary {
+  @apply bg-d_peach-500;
+}
+.image-card--dark {
+  @apply bg-d_grey-500;
+}
+.image-card--light {
+  @apply bg-d_light_peach-100;
+}
