@@ -1,0 +1,11 @@
+.button {
+  @apply bg-white text-d_dark_grey-500;
+}
+
+.button--block {
+  @apply w-full;
+}
+
+.button--dark {
+  @apply bg-d_peach-500 text-white;
+}
