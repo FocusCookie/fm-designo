@@ -1,6 +1,24 @@
 import React from "react";
 import "./ImageCard.css";
 
+const DIMM_MAX = 1;
+const DIMM_MIN = 0;
+
+interface Image {
+  /**
+   * image src
+   */
+  src: string;
+  /**
+   * alt description for the image
+   */
+  alt: string;
+  /**
+   * background position for the image
+   */
+  position: string;
+}
+
 interface ImageCardProps {
   /**
    * defines the background color of the card
@@ -11,9 +29,9 @@ interface ImageCardProps {
    */
   padding?: string;
   /**
-   * image src
+   * image - src, alt, position
    */
-  image?: any; //TODO: solve this issue with imported images...
+  image: Image;
   /**
    * add a color layer in front of the image with a dimmlevel opacity
    */
@@ -22,6 +40,10 @@ interface ImageCardProps {
    * react children
    */
   children: React.ReactNode;
+  /**
+   *  no rounded corners
+   */
+  sharp?: boolean;
 }
 
 /**
@@ -30,21 +52,50 @@ interface ImageCardProps {
 export const ImageCard = ({
   variant = "primary",
   padding = "1rem",
-  dimmlevel = 1,
+  dimmlevel = 0,
   image,
+  sharp = false,
   children,
   ...props
 }: ImageCardProps) => {
-  const modeVariant = variant ? variant : "";
+  const modeVariant = variant ? variant : "primary";
+  const modeSharp = sharp ? "image-card--sharp" : "";
+
+  function secureDimmlevel(dimmlevel: number) {
+    if (dimmlevel === undefined) return 0;
+    if (dimmlevel < DIMM_MIN) return 0;
+    if (dimmlevel > DIMM_MAX) return 1;
+    return dimmlevel;
+  }
 
   return (
     <div
-      className={["image-card", `image-card--${modeVariant}`].join(" ")}
-      style={{ padding: padding === "" ? "1rem" : padding }}
+      className={["image-card", `image-card--${modeVariant}`, modeSharp].join(
+        " "
+      )}
+      style={{
+        backgroundImage: `url(${image.src})`,
+        backgroundPosition: image.position || "left center",
+      }}
+      role="img"
+      aria-label={image.alt}
       {...props}
     >
-      <Image />
-      {children}
+      <div
+        className={[
+          "image-card__dimmer",
+          `image-card__dimmer--${modeVariant}`,
+        ].join(" ")}
+        style={{ opacity: `${secureDimmlevel(dimmlevel)}` }}
+      ></div>
+      <div
+        className="image-card__content"
+        style={{
+          padding: padding === "" ? "1rem" : padding,
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 };
