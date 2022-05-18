@@ -1,0 +1,11 @@
+.location {
+  @apply flex flex-col gap-8 w-max items-center;
+}
+
+.location__illustration {
+  @apply mb-4;
+}
+
+.location__title {
+  @apply uppercase text-xl font-medium;
+}
