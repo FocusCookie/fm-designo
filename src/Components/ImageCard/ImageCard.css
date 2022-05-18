@@ -26,6 +26,16 @@
   grid-row: 1 / 2;
 }
 
+.image-card:hover > .image-card__dimmer--primary {
+  @apply bg-black;
+}
+.image-card:hover > .image-card__dimmer--dark {
+  @apply bg-d_peach-500;
+}
+.image-card:hover > .image-card__dimmer--light {
+  @apply bg-d_peach-500;
+}
+
 .image-card__dimmer--primary {
   @apply bg-d_peach-500;
 }
