@@ -39,7 +39,7 @@ module.exports = {
         msg: "0.075rem",
       },
       fontFamily: {
-        base: [
+        designo: [
           "Jost",
           "ui-sans-serif",
           "system-ui",

@@ -1,5 +1,5 @@
 .button {
-  @apply bg-d_peach-500 hover:bg-d_light_peach-500 text-white rounded-lg px-6 pb-[1.125rem] pt-[1.1875rem] text-button font-base outline-none border-0 uppercase cursor-pointer;
+  @apply bg-d_peach-500 hover:bg-d_light_peach-500 text-white rounded-lg px-6 pb-[1.125rem] pt-[1.1875rem] text-button outline-none border-0 uppercase cursor-pointer font-medium;
 }
 
 .button--block {
