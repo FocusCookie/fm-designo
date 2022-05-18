@@ -1,0 +1,37 @@
+.image-card {
+  @apply rounded-designo grid bg-no-repeat box-border overflow-hidden text-white;
+}
+
+.image-card--sharp {
+  @apply rounded-none;
+}
+
+.image-card--primary {
+  @apply bg-d_peach-500;
+}
+.image-card--dark {
+  @apply bg-d_dark_grey-500;
+}
+.image-card--light {
+  @apply bg-d_light_peach-100 text-d_dark_grey-500;
+}
+
+.image-card__content {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  @apply z-10;
+}
+.image-card__dimmer {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.image-card__dimmer--primary {
+  @apply bg-d_peach-500;
+}
+.image-card__dimmer--dark {
+  @apply bg-black;
+}
+.image-card__dimmer--light {
+  @apply bg-d_light_peach-100;
+}
