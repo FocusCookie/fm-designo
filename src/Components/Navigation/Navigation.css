@@ -1,3 +1,7 @@
 .navigation {
-  @apply flex flex-row gap-1;
+  @apply flex flex-row gap-4 justify-between;
+}
+
+.navigation__items {
+  @apply flex flex-row gap-[2.265rem];
 }
