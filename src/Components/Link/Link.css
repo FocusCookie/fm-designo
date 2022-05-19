@@ -1,0 +1,16 @@
+.link {
+  @apply text-sm cursor-pointer hover:underline uppercase;
+}
+
+.link--primary {
+  @apply text-d_peach-500;
+}
+.link--dark {
+  @apply text-d_black-500;
+}
+.link--light {
+  @apply text-d_light_peach-500;
+}
+.link--white {
+  @apply text-white;
+}
