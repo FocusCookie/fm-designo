@@ -2,6 +2,13 @@
   @apply text-sm cursor-pointer hover:underline uppercase;
 }
 
+.link--default {
+  @apply text-base;
+}
+.link--large {
+  @apply text-2xl;
+}
+
 .link--primary {
   @apply text-d_peach-500;
 }

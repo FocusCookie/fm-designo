@@ -1,3 +1,20 @@
 .navigation {
-  @apply flex flex-row gap-1;
+  @apply flex flex-col gap-0;
+}
+
+.navigation__logo {
+  @apply shrink;
+}
+
+.navigation__bar {
+  @apply flex flex-row gap-4 justify-between h-24 items-center bg-white px-6;
+}
+
+.navigation__items {
+  @apply flex flex-row gap-[2.265rem] flex-shrink-0;
+}
+
+.navigation__modal {
+  height: calc(100vh - 6rem);
+  @apply bg-d_black-500 opacity-80 flex flex-col gap-4 items-start px-6 py-12;
 }
