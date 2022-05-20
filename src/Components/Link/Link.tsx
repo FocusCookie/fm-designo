@@ -11,6 +11,10 @@ interface LinkProps {
    */
   className?: string;
   /**
+   * size of the link
+   */
+  size?: "default" | "large";
+  /**
    * handler argument
    */
   clickArg?: string | null;
@@ -33,6 +37,7 @@ export const Link = ({
   label,
   className,
   clickArg,
+  size = "default",
   ...props
 }: LinkProps) => {
   function handleClick() {
@@ -41,7 +46,9 @@ export const Link = ({
 
   return (
     <span
-      className={["link", className, `link--${color}`].join(" ")}
+      className={["link", className, `link--${color}`, `link--${size}`].join(
+        " "
+      )}
       {...props}
       onClick={handleClick}
     >
