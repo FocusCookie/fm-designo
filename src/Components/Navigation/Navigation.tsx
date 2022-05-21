@@ -37,35 +37,8 @@ export const Navigation = ({ children, links, ...props }: NavigationProps) => {
 
   const ref = React.useRef<HTMLDivElement>(null);
 
-  function updateWidthAfterResize() {
-    setWidth(ref.current?.offsetWidth || 0);
-  }
-
-  useEffect(() => {
-    if (ref) {
-      setWidth(ref.current?.offsetWidth || 0);
-      window.addEventListener("resize", () => updateWidthAfterResize());
-    }
-
-    return () => {
-      window.removeEventListener("resize", () => updateWidthAfterResize());
-    };
-  }, []);
-
-  useEffect(() => {
-    if (width && width >= BREAKPOINT_SM) setModal(false);
-  }, [width]);
-
   function handleModal() {
     setModal((current) => !current);
-  }
-
-  function responsiveLinkSize(width: React.SetStateAction<number>) {
-    return width >= BREAKPOINT_SM ? "default" : "large";
-  }
-
-  function responsiveLinkColor(width: React.SetStateAction<number>) {
-    return width >= BREAKPOINT_SM ? "dark" : "white";
   }
 
   function menuIcon(isOpen: boolean) {
@@ -76,16 +49,13 @@ export const Navigation = ({ children, links, ...props }: NavigationProps) => {
     return (
       <>
         {links.map((link, index) => (
-          <Link key={`nav-link-${link.label}-${index}`} to={link.route}>
+          <Link
+            key={`nav-link-${link.label}-${index}`}
+            to={link.route}
+            className="navigation__link"
+          >
             {link.label}
           </Link>
-          /*  <Link
-            key={`nav-link-${link.label}-${index}`}
-            label={link.label}
-            color={responsiveLinkColor(width)}
-            size={responsiveLinkSize(width)}
-            onClick={() => console.log(link.route)}
-          /> */
         ))}
       </>
     );
@@ -100,23 +70,26 @@ export const Navigation = ({ children, links, ...props }: NavigationProps) => {
           width="202"
           className="navigation__logo"
         />
-        <div className="navigation__items">
-          {width && width >= BREAKPOINT_SM && renderLinks()}
-          {width && width < BREAKPOINT_SM && (
-            <>
-              <button>
-                <img
-                  width="20"
-                  src={menuIcon(modal)}
-                  alt="open menue"
-                  onClick={handleModal}
-                />
-              </button>
-            </>
-          )}
+        <div>
+          <div className="navigation__items">{renderLinks()}</div>
+          <button className="navigation__items__toggle">
+            <img
+              width="20"
+              src={menuIcon(modal)}
+              alt="open menue"
+              onClick={handleModal}
+            />
+          </button>
         </div>
       </div>
-      {modal && <div className="navigation__modal">{renderLinks()}</div>}
+      <div
+        className={[
+          "navigation__modal",
+          `navigation__modal--${modal ? "" : "close"}`,
+        ].join(" ")}
+      >
+        {renderLinks()}
+      </div>
     </div>
   );
 };
