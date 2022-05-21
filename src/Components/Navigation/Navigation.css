@@ -7,7 +7,7 @@
 }
 
 .navigation__bar {
-  @apply flex flex-row gap-4 justify-between h-24 items-center bg-white px-6;
+  @apply flex flex-row gap-4 justify-between h-24 items-center bg-white;
 }
 
 .navigation__items {
@@ -19,7 +19,7 @@
 
 .navigation__modal {
   height: calc(100vh - 6rem);
-  @apply bg-d_black-500 opacity-80 flex flex-col gap-4 items-start px-6 py-12 md:hidden;
+  @apply absolute top-24 bottom-0 left-0 right-0 bg-d_black-500 opacity-80 flex flex-col gap-4 items-start px-6 py-12 md:hidden;
 }
 .navigation__modal--close {
   @apply hidden;

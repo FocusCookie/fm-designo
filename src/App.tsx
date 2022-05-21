@@ -1,36 +1,29 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { Navigation } from "./Components/Navigation/Navigation";
+
+const NAV_LINKS = [
+  { label: "our company", route: "/company" },
+  { label: "locations", route: "/locations" },
+  { label: "contact", route: "/contact" },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <div className="App">
-        <h1>Welcome to React Router!</h1>
+    <div className="app">
+      <div className="app__nav">
+        <Navigation links={NAV_LINKS} />
+      </div>
+      <div className="app__content">
         <Routes>
-          <Route
-            path="/"
-            element={
-              <div>
-                {" "}
-                this is the app page <Link to="/about">About</Link>
-              </div>
-            }
-          />
-          <Route
-            path="about"
-            element={
-              <div>
-                about page <Link to="/">home</Link>
-              </div>
-            }
-          />
+          <Route path="/" element={<div>HOME</div>} />
+          <Route path="/company" element={<div>COMPANY</div>} />
+          <Route path="/locations" element={<div>LOCATIONs</div>} />
+          <Route path="/contact" element={<div>CONTACT</div>} />
         </Routes>
       </div>
+      //TODO: Implement a Footer Component and add it here
     </div>
   );
 }

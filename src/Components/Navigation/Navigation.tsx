@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Navigation.css";
 import Logo from "../../assets/shared/desktop/logo-dark.png";
 import Hamburger from "../../assets/shared/mobile/icon-hamburger.svg";
@@ -6,8 +6,6 @@ import Close from "../../assets/shared/mobile/icon-close.svg";
 // import { Link } from "../Link/Link";
 
 import { Link } from "react-router-dom";
-
-const BREAKPOINT_SM = 640;
 
 interface NavigationLink {
   /**
@@ -22,20 +20,13 @@ interface NavigationLink {
 
 interface NavigationProps {
   /**
-   * the children are placed on the right side of the nav
-   */
-  children: React.ReactNode;
-  /**
    * links to render
    */
   links: Array<NavigationLink>;
 }
 
-export const Navigation = ({ children, links, ...props }: NavigationProps) => {
-  const [width, setWidth] = useState<React.SetStateAction<number>>(0);
+export const Navigation = ({ links, ...props }: NavigationProps) => {
   const [modal, setModal] = useState<boolean>(false);
-
-  const ref = React.useRef<HTMLDivElement>(null);
 
   function handleModal() {
     setModal((current) => !current);
@@ -62,14 +53,16 @@ export const Navigation = ({ children, links, ...props }: NavigationProps) => {
   }
 
   return (
-    <div className="navigation" {...props} ref={ref}>
+    <div className="navigation" {...props}>
       <div className="navigation__bar">
-        <img
-          src={Logo}
-          alt="Designo Logo"
-          width="202"
-          className="navigation__logo"
-        />
+        <Link to={"/"}>
+          <img
+            src={Logo}
+            alt="Designo Logo"
+            width="202"
+            className="navigation__logo"
+          />
+        </Link>
         <div>
           <div className="navigation__items">{renderLinks()}</div>
           <button className="navigation__items__toggle">
