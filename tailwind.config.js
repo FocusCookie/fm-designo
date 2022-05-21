@@ -37,6 +37,7 @@ module.exports = {
         button: "0.9375rem",
         label: "0.9375rem",
         msg: "0.075rem",
+        footer: "2rem",
       },
       fontFamily: {
         designo: [

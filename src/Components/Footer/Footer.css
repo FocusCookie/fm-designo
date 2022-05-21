@@ -1,0 +1,15 @@
+.footer {
+  @apply bg-white grid grid-rows-3 grid-cols-1;
+}
+
+.footer__talk {
+  @apply row-start-1 row-end-3  mx-4 col-start-1 col-end-2 z-10;
+}
+
+.footer__void {
+  @apply bg-d_black-500 row-start-2 row-end-3 col-start-1 col-end-2;
+}
+
+.footer__content {
+  @apply row-start-3 row-end-3 bg-d_black-500 text-white  col-start-1 col-end-2;
+}
