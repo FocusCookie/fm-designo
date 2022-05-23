@@ -3,8 +3,6 @@ import "./Navigation.css";
 import Logo from "../../assets/shared/desktop/logo-dark.png";
 import Hamburger from "../../assets/shared/mobile/icon-hamburger.svg";
 import Close from "../../assets/shared/mobile/icon-close.svg";
-// import { Link } from "../Link/Link";
-
 import { Link } from "react-router-dom";
 
 interface NavigationLink {

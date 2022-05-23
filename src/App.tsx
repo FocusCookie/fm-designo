@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Navigation } from "./Components/Navigation/Navigation";
+import { Footer } from "./Components/Footer/Footer";
 
 const NAV_LINKS = [
   { label: "our company", route: "/company" },
@@ -23,7 +24,7 @@ function App() {
           <Route path="/contact" element={<div>CONTACT</div>} />
         </Routes>
       </div>
-      //TODO: Implement a Footer Component and add it here
+      <Footer links={NAV_LINKS} />
     </div>
   );
 }
