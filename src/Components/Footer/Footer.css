@@ -3,7 +3,7 @@
 }
 
 .footer__talk {
-  @apply w-full px-6 sm:px-10 col-start-1 col-end-2 z-10 lg:max-w-[1111px] lg:justify-self-center -translate-y-1/2 sm:-translate-y-48;
+  @apply w-full px-6 sm:px-10 col-start-1 col-end-2 z-10 lg:max-w-[1191px] lg:justify-self-center -translate-y-1/2 sm:-translate-y-48;
 }
 
 .footer__content {

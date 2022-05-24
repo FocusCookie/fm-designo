@@ -3,6 +3,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Navigation } from "./Components/Navigation/Navigation";
 import { Footer } from "./Components/Footer/Footer";
+import { Home } from "./views/Home/Home";
 
 const NAV_LINKS = [
   { label: "our company", route: "/company" },
@@ -18,7 +19,7 @@ function App() {
       </div>
       <div className="app__content">
         <Routes>
-          <Route path="/" element={<div>HOME</div>} />
+          <Route path="/" element={<Home />} />
           <Route path="/company" element={<div>COMPANY</div>} />
           <Route path="/locations" element={<div>LOCATIONs</div>} />
           <Route path="/contact" element={<div>CONTACT</div>} />

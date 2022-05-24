@@ -1,5 +1,5 @@
 .navigation {
-  @apply flex flex-col gap-0;
+  @apply flex flex-col gap-0 lg:max-w-[1111px] mx-auto;
 }
 
 .navigation__logo {
