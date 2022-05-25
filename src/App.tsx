@@ -1,36 +1,41 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import { Navigation } from "./Components/Navigation/Navigation";
+import { Footer } from "./Components/Footer/Footer";
+import { Home } from "./views/Home/Home";
+import useResize from "./hooks/useResize";
+
+import Background from "./assets/shared/desktop/bg-pattern-leaf.svg";
+
+const NAV_LINKS = [
+  { label: "our company", route: "/company" },
+  { label: "locations", route: "/locations" },
+  { label: "contact", route: "/contact" },
+];
 
 function App() {
+  const windowSize = useResize();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-      <div className="App">
-        <h1>Welcome to React Router!</h1>
+    <div
+      className="app"
+      style={{
+        backgroundImage: windowSize.width > 640 ? `url(${Background})` : "none",
+      }}
+    >
+      <div className="app__nav">
+        <Navigation links={NAV_LINKS} />
+      </div>
+      <div className="app__content">
         <Routes>
-          <Route
-            path="/"
-            element={
-              <div>
-                {" "}
-                this is the app page <Link to="/about">About</Link>
-              </div>
-            }
-          />
-          <Route
-            path="about"
-            element={
-              <div>
-                about page <Link to="/">home</Link>
-              </div>
-            }
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="/company" element={<div>COMPANY</div>} />
+          <Route path="/locations" element={<div>LOCATIONs</div>} />
+          <Route path="/contact" element={<div>CONTACT</div>} />
         </Routes>
       </div>
+      <Footer links={NAV_LINKS} />
     </div>
   );
 }

@@ -13,6 +13,7 @@ module.exports = {
           500: "hsla(270, 3%, 11%, 1)",
         },
         d_white: {
+          100: "hsla(0, 100%, 100%, 0.1)",
           500: "hsla(0, 100%, 100%, 1)",
         },
         d_light_peach: {
@@ -37,6 +38,7 @@ module.exports = {
         button: "0.9375rem",
         label: "0.9375rem",
         msg: "0.075rem",
+        footer: "2rem",
       },
       fontFamily: {
         designo: [

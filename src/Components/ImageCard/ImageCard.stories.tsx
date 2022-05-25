@@ -37,6 +37,11 @@ SharpBorderRadius.args = {
   sharp: true,
 };
 
+export const Cover = Template.bind({});
+Cover.args = {
+  cover: true,
+};
+
 export const Dark = Template.bind({});
 Dark.args = {
   variant: "dark",

@@ -1,6 +1,8 @@
 import React from "react";
 import "./Location.css";
 import { Button } from "../Button/Button";
+import { Illustration } from "../Illustration/Illustration";
+
 import Canada from "../../assets/shared/desktop/illustration-canada.svg";
 import Australia from "../../assets/shared/desktop/illustration-australia.svg";
 import UK from "../../assets/shared/desktop/illustration-united-kingdom.svg";
@@ -25,16 +27,23 @@ export const Location = ({
   onClick,
   ...props
 }: LocationProps) => {
+  function countryIllustration(country: string): string {
+    if (country === "canada") return Canada;
+    if (country === "australia") return Australia;
+    return UK;
+  }
+  function countryBackgroundRotation(country: string): number {
+    if (country === "canada") return 0;
+    if (country === "australia") return -90;
+    return 180;
+  }
+
   return (
     <div className="location" {...props}>
-      <div
-        className="location__illustration"
-        style={{ backgroundImage: `url(${Sphere})` }}
-      >
-        {country === "canada" && <img src={Canada} alt="Canada" />}
-        {country === "australia" && <img src={Australia} alt="Australia" />}
-        {country === "united kingdom" && <img src={UK} alt="United Kingdom" />}
-      </div>
+      <Illustration
+        img={{ src: countryIllustration(country), alt: `${country}` }}
+        rotation={countryBackgroundRotation(country)}
+      />
       <span className="location__title">{country}</span>
       <Button label="see location" onClick={onClick} />
     </div>
