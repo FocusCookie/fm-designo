@@ -1,5 +1,5 @@
 .app {
-  @apply mx-auto w-full flex flex-col;
+  @apply mx-auto w-full flex flex-col bg-repeat-y bg-top;
 }
 
 .app__nav {

@@ -4,6 +4,9 @@ import { Routes, Route } from "react-router-dom";
 import { Navigation } from "./Components/Navigation/Navigation";
 import { Footer } from "./Components/Footer/Footer";
 import { Home } from "./views/Home/Home";
+import useResize from "./hooks/useResize";
+
+import Background from "./assets/shared/desktop/bg-pattern-leaf.svg";
 
 const NAV_LINKS = [
   { label: "our company", route: "/company" },
@@ -12,8 +15,15 @@ const NAV_LINKS = [
 ];
 
 function App() {
+  const windowSize = useResize();
+
   return (
-    <div className="app">
+    <div
+      className="app"
+      style={{
+        backgroundImage: windowSize.width > 640 ? `url(${Background})` : "none",
+      }}
+    >
       <div className="app__nav">
         <Navigation links={NAV_LINKS} />
       </div>

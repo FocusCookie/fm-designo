@@ -29,6 +29,10 @@ interface ImageCardProps {
    */
   padding?: string;
   /**
+   * additional classes
+   */
+  className?: string;
+  /**
    * image - src, alt, position
    */
   image: Image;
@@ -44,6 +48,10 @@ interface ImageCardProps {
    *  no rounded corners
    */
   sharp?: boolean;
+  /**
+   *  image should be used as cover
+   */
+  cover?: boolean;
 }
 
 /**
@@ -55,6 +63,8 @@ export const ImageCard = ({
   dimmlevel = 0,
   image,
   sharp = false,
+  cover = false,
+  className = "",
   children,
   ...props
 }: ImageCardProps) => {
@@ -70,12 +80,16 @@ export const ImageCard = ({
 
   return (
     <div
-      className={["image-card", `image-card--${modeVariant}`, modeSharp].join(
-        " "
-      )}
+      className={[
+        "image-card",
+        `image-card--${modeVariant}`,
+        modeSharp,
+        className,
+      ].join(" ")}
       style={{
         backgroundImage: `url(${image.src})`,
         backgroundPosition: image.position || "left center",
+        backgroundSize: cover ? "cover" : "contain",
       }}
       role="img"
       aria-label={image.alt}

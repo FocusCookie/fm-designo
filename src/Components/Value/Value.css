@@ -1,0 +1,9 @@
+.value {
+  @apply flex flex-col gap-12 sm:gap-8 lg:gap-12 items-center text-center sm:flex-row lg:flex-col sm:text-left lg:text-center;
+}
+.value__text {
+  @apply flex flex-col gap-8 sm:gap-4 lg:gap-8;
+}
+.value__title {
+  @apply uppercase text-xl font-medium tracking-[0.3125rem];
+}

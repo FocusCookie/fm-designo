@@ -1,0 +1,10 @@
+.illustration {
+  @apply bg-center h-[12.625rem] w-[12.625rem] bg-contain grid grid-cols-1 grid-rows-1 shrink-0;
+}
+.illustration > img {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+.illustration__image {
+  @apply z-10;
+}
