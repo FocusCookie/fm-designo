@@ -1,5 +1,5 @@
 .card {
-  @apply rounded-designo flex overflow-hidden hover:bg-d_peach-500 text-d_dark_grey-500 hover:text-white;
+  @apply rounded-designo flex overflow-hidden bg-d_light_peach-100 hover:bg-d_peach-500 text-d_dark_grey-500 hover:text-white;
 }
 .card--light {
   @apply bg-d_light_peach-100;
@@ -8,11 +8,11 @@
   @apply bg-d_peach-500;
 }
 
-.card--col {
+.card--column {
   @apply flex-col;
 }
 .card--row {
-  @apply flex-row;
+  @apply flex-row items-center;
 }
 .card--sharp {
   @apply rounded-none;

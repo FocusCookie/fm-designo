@@ -26,33 +26,6 @@
   }
 }
 
-.home__projects {
-  grid-template-rows: repeat(3, 15.625rem);
-  @apply grid grid-cols-1 gap-6 lg:grid-cols-2 px-6 sm:px-0;
-}
-@media only screen and (min-width: 640px) {
-  .home__projects {
-    grid-template-rows: repeat(3, 12.5rem);
-  }
-}
-@media only screen and (min-width: 1024px) {
-  .home__projects {
-    grid-template-rows: repeat(2, 19.25rem);
-  }
-}
-.home__projects__content {
-  @apply flex flex-col items-center justify-center h-full;
-}
-.home__projects__headline {
-  @apply uppercase text-[1.75rem] font-medium;
-}
-.project__link {
-  @apply flex flex-row gap-4 items-center uppercase text-button font-medium;
-}
-.home__projects__web {
-  @apply lg:row-span-2;
-}
-
 .home__values {
   @apply flex flex-col gap-8 lg:flex-row px-6 sm:px-0 mb-40;
 }

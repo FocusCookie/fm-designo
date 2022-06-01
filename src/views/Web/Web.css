@@ -13,13 +13,16 @@
 }
 
 .web__references {
-  @apply p-6 text-center;
+  @apply p-6 sm:px-0 text-center grid grid-cols-1 grid-flow-row lg:grid-cols-3 lg:grid-rows-3 gap-10;
 }
 .web__references__desc {
-  @apply pt-4 pb-8 px-[1.8125rem];
+  @apply py-8 px-[1.8125rem] w-full;
 }
 .web__references__title {
   @apply uppercase font-medium tracking-[0.3125rem] text-xl;
 }
 .web__references__text {
+}
+.web__reference__img {
+  @apply w-full;
 }

@@ -7,10 +7,6 @@ interface CardProps {
    */
   oriontation?: "column" | "row";
   /**
-   * defines in which order the child will be disyplayed vertical
-   */
-  variant?: "primary" | "light";
-  /**
    * react children
    */
   children: React.ReactNode;
@@ -31,7 +27,6 @@ export const Card = ({
   oriontation = "column",
   sharp = false,
   gap = "1rem",
-  variant = "primary",
   children,
   ...props
 }: CardProps) => {
@@ -39,8 +34,8 @@ export const Card = ({
 
   return (
     <div
-      className={["card", modeSharp, `card--${variant}`].join(" ")}
-      style={{ gap: gap, flexDirection: oriontation }}
+      className={["card", modeSharp, `card--${oriontation}`].join(" ")}
+      style={{ gap: gap }}
       {...props}
     >
       {children}
