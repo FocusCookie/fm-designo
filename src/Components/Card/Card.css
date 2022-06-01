@@ -1,5 +1,11 @@
 .card {
-  @apply rounded-designo flex overflow-hidden bg-d_light_peach-500 hover:bg-d_peach-500 text-d_dark_grey-500 hover:text-white;
+  @apply rounded-designo flex overflow-hidden hover:bg-d_peach-500 text-d_dark_grey-500 hover:text-white;
+}
+.card--light {
+  @apply bg-d_light_peach-100;
+}
+.card--primary {
+  @apply bg-d_peach-500;
 }
 
 .card--col {
@@ -10,4 +16,11 @@
 }
 .card--sharp {
   @apply rounded-none;
+}
+
+.card h1 {
+  @apply text-d_peach-500;
+}
+.card:hover h1 {
+  @apply text-white;
 }

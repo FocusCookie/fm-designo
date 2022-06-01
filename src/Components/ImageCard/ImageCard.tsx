@@ -89,7 +89,7 @@ export const ImageCard = ({
       style={{
         backgroundImage: `url(${image.src})`,
         backgroundPosition: image.position || "left center",
-        backgroundSize: cover ? "cover" : "contain",
+        backgroundSize: cover ? "cover" : "initial",
       }}
       role="img"
       aria-label={image.alt}
