@@ -1,6 +1,8 @@
+/* TODO: change the projects from grid to flexbox with wrap, because except from the home page there only two elmeents displayed that causes an empty row with 15rem height... */
+
 .projects {
-  grid-template-rows: repeat(3, 15.625rem);
-  @apply grid grid-cols-1 gap-6 lg:grid-cols-2 px-6 sm:px-0;
+  grid-template-rows: 15.625rem 15.625rem clamp(0, 15.625rem, 15.625rem);
+  @apply grid grid-cols-1 gap-6  lg:grid-cols-2 px-6 sm:px-0 mb-24;
 }
 @media only screen and (min-width: 640px) {
   .projects {

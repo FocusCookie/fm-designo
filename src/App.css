@@ -1,5 +1,5 @@
 .app {
-  @apply mx-auto w-full flex flex-col bg-repeat-y bg-top;
+  @apply mx-auto w-full flex flex-col bg-repeat-y;
 }
 
 .app__nav {
@@ -7,5 +7,5 @@
 }
 
 .app__content {
-  @apply sm:px-10;
+  @apply sm:px-10 pt-24 sm:pt-0;
 }

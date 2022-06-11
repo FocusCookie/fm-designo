@@ -11,6 +11,7 @@ import BuilderImg from "../../assets/web-design/desktop/image-builder.jpg";
 import CampImg from "../../assets/web-design/desktop/image-camp.jpg";
 import PhotonImg from "../../assets/web-design/desktop/image-photon.jpg";
 import TransferImg from "../../assets/web-design/desktop/image-transfer.jpg";
+import BlogrImg from "../../assets/web-design/desktop/image-blogr.jpg";
 
 type WebReference = {
   title: string;
@@ -55,7 +56,7 @@ export const Web = () => {
         "Connects users with local contractors based on their location",
     },
     {
-      image: ExpressImg,
+      image: BlogrImg,
       title: "blogr",
       description:
         "Blogr is a platform for creating an online blog or publication",
@@ -100,7 +101,11 @@ export const Web = () => {
   return (
     <div className="web">
       <ImageCard
-        image={{ ...HERO_BACK, position: "right top" }}
+        image={{
+          ...HERO_BACK,
+          position:
+            windowSize.width < BREAKPOINT_TABLET ? "right top" : "left center",
+        }}
         padding="0"
         sharp={windowSize.width < BREAKPOINT_TABLET}
       >

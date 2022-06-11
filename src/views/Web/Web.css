@@ -3,17 +3,17 @@
 }
 
 .web__hero {
-  @apply flex flex-col gap-4 items-center justify-center w-full h-full text-center px-4 py-[6.5625rem];
+  @apply flex flex-col gap-4 items-center justify-center w-full h-full text-center px-4 py-[6.5625rem] sm:py-16;
 }
 .web__hero_para {
-  @apply text-center;
+  @apply text-center sm:w-96;
 }
 .web__hero_headline {
   @apply text-footer font-medium sm:text-5xl;
 }
 
 .web__references {
-  @apply p-6 sm:px-0 text-center grid grid-cols-1 grid-flow-row lg:grid-cols-3 lg:grid-rows-3 gap-10;
+  @apply p-6 sm:px-0 text-center grid grid-cols-1 grid-flow-row lg:grid-cols-3 lg:grid-rows-2 gap-10;
 }
 .web__references__desc {
   @apply py-8 px-[1.8125rem] w-full;
@@ -24,5 +24,5 @@
 .web__references__text {
 }
 .web__reference__img {
-  @apply w-full;
+  @apply w-full sm:w-1/2 lg:w-full;
 }
